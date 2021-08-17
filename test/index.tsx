@@ -11,6 +11,7 @@ class DemoCalendar extends Component<any, any> {
         };
     }
     onChangeDate = () => {};
+    
     renderDate = data => {
         return <div>{data.day}</div>;
     };
