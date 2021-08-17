@@ -1,0 +1,138 @@
+.calendar-picker {
+    display: block;
+    height: 100%;
+    min-height: 200px;
+    font-size: 16px;
+    background: #fff;
+    box-shadow: 2px 2px 7px 1px rgba(187, 86, 51, 0.04);
+    border-radius: 8px;
+    .calendar-picker-box {
+        padding: 0 20px;
+        .calendar-picker-header {
+            padding-top: 19px;
+            padding-bottom: 13px;
+            width: 100%;
+            justify-content: center;
+            background: #fff;
+            display: flex;
+            .current-month {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #f8f8f8;
+                border-radius: 20px;
+                width: 220px;
+                height: 45px;
+                .title-date {
+                    font-size: 16px;
+                    color: #000000;
+                    line-height: 16px;
+                    padding: 15px 27px;
+                }
+                .arrow {
+                    width: 0px;
+                    height: 0px;
+                    border: 10px solid #f98a61;
+                }
+                .arrow.arrow-left {
+                    border-color: transparent #f98a61 transparent transparent;
+                    &.disabled {
+                        border-color: transparent #ddd transparent transparent;
+                    }
+                }
+                .arrow.arrow-right {
+                    border-color: transparent transparent transparent #f98a61;
+                    &.disabled {
+                        border-color: transparent transparent transparent #ddd;
+                    }
+                }
+            }
+            // 回到今天
+            .title-date-today {
+                position: absolute;
+                right: 0px;
+                .today-icon {
+                    width: 58px;
+                    height: 42px;
+                }
+            }
+        }
+        .calendar-picker-week > .week-cell,
+        .calendar-picker-month-box > .week-cell {
+            text-align: center;
+            width: 14%;
+            color: #222;
+        }
+        .calendar-picker-week {
+            width: 100%;
+            font-family: PingFangSC-Regular;
+            font-size: 14px;
+            line-height: 14px;
+            text-align: center;
+            background: #fff;
+            display: flex;
+            flex: 1;
+            padding-bottom: 15px;
+            .week-cell {
+                position: relative;
+            }
+        }
+        .calendar-picker-month-box {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            text-align: center;
+            flex: 1;
+            .week-cell {
+                &.date-cell {
+                    height: 45px;
+                    position: relative;
+                    font-size: 16px;
+                    .text-item {
+                        padding-top: 6px;
+                        &.prev-month-day {
+                            color: #ddd;
+                        }
+                        &.next-month-day {
+                            color: #ddd;
+                        }
+                        &.disabled {
+                            color: #ddd;
+                        }
+                        &.active,
+                        &.active-today {
+                            width: 42px;
+                            height: 35px;
+                            border-radius: 40%;
+                        }
+                        &.active-today.has-icon,
+                        &.active.has-icon {
+                            width: 41px;
+                            height: 45px;
+                            border-radius: 18px 18px;
+                        }
+                        &.active {
+                            background: #fdeae3;
+                            color: #f98a61;
+                        }
+                        &.active-today {
+                            background-color: #f98a61;
+                            .today-block {
+                                color: #fff;
+                            }
+                        }
+                        // 图标
+                        .service-icon {
+                            width: 20px;
+                            height: 20px;
+                        }
+                        // 今天始终是高亮
+                        .today-block {
+                            color: #fbb7a1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
